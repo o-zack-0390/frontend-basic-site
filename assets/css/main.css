@@ -41,9 +41,10 @@
   color: var(--color-accent-yellow);
   display: flex;
   flex-direction: column;
+  gap: 30px
   /*
     flex,column : 子要素を縦並びにする
-    gap         : 行列の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
+    gap         : 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
   */
 }
 
@@ -58,7 +59,7 @@
     line-height    : 文字の大きさと上下の余白を合わせた高さ
     em             : 文字の高さを基準とした単位。フォントサイズが10pxで1emなら10px、5emなら50px
     letter-spacing : 文字の間隔
-    margin         : 要素の外側を囲う間隔
+    margin         : 要素の外側を囲う余白
   */
 }
 
