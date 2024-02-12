@@ -17,6 +17,23 @@
   --color-course-overlay: rgba(32, 8, 19, 0.63);
 }
 
+/* global */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: var(--font-family-noto-sans-jp);
+  /* bodyタグは初期値でmarginが設定されているため0に上書きしておく */
+}
+
+img{
+  display: block;
+}
+
 /* hero */
 .hero{
   background-image: url("../images/hero.png");
