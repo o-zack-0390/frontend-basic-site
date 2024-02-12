@@ -37,13 +37,19 @@ img{
 /* header */
 .header{
   height: 80px;
+  width: 100%;
   background-color: var(--color-background-black);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   /*
     justify-content: center; -> 子要素をX軸方向に中央揃え
     align-items: center;     -> 子要素をY軸方向に中央揃え
+    position: fixed;         -> 要素を追従させる. 今回の場合は画面上から0px、画面左から0pxの位置に要素が配置され追従する
   */
 }
 
@@ -68,12 +74,14 @@ img{
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-top: 80px;
   /*
     padding             -> 要素の「内容と枠の間」の余白を設定
     justify-content     -> flex-direction と並行する方向のレイアウトを調整
     flex-end            -> flex要素を右に寄せる
     align-items: center -> 子要素を中央に配置
     position: relative  -> その要素のもとのあった場所(static指定時)を起点として位置を決定
+    margin-top: 80px    -> header 要素と重なってしまうので header の高さと同じ 80px を指定
   */
 }
 
@@ -150,7 +158,11 @@ img{
   }
 
   .hero{
+    margin-top: 60px;
     padding: 40px, 20px;
+    /*
+      margin-top: 60px    -> header 要素と重なってしまうので header の高さと同じ 60px を指定
+    */
   }
 
   .hero-container{
