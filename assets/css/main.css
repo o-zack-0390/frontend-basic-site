@@ -16,3 +16,58 @@
   --color-hero-overlay: rgba(57, 24, 111, 0.4);
   --color-course-overlay: rgba(32, 8, 19, 0.63);
 }
+
+/* hero */
+.hero{
+  background-image: url("../image/hero.jpg");
+  padding: 94px 40px;
+  /*
+    padding : 要素の「内容と枠の間」の余白を設定
+  */
+}
+
+.hero-container{
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: flex-end;
+  /*
+    justify-content : flex-direction と並行する方向のレイアウトを調整
+    flex-end        : flex要素を右に寄せる
+  */
+}
+
+.hero-texts{
+  color: var(--color-accent-yellow);
+  display: flex;
+  flex-direction: column;
+  /*
+    flex,column : 子要素を縦並びにする
+    gap         : 行列の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
+  */
+}
+
+.hero-main-copy{
+  font-family: var(--font-family-anton);
+  font-size: 64px;
+  line-height: 1;
+  margin: 0; 
+  letter-spacing: 0.05em;
+  color: var(--color-accent-yellow);
+  /*
+    line-height    : 文字の大きさと上下の余白を合わせた高さ
+    em             : 文字の高さを基準とした単位。フォントサイズが10pxで1emなら10px、5emなら50px
+    letter-spacing : 文字の間隔
+    margin         : 要素の外側を囲う間隔
+  */
+}
+
+.hero-main-copy-accent{
+  color: var(--color-accent-red);
+}
+
+.hero-sub-copy{
+  font-family: var(--font-family-noto-sans-jp);
+  font-size: 16px;
+  margin: 0
+}
