@@ -34,6 +34,31 @@ img{
   display: block;
 }
 
+/* header */
+.header{
+  height: 80px;
+  background-color: var(--color-background-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
+    justify-content: center; -> 子要素をX軸方向に中央揃え
+    align-items: center;     -> 子要素をY軸方向に中央揃え
+  */
+}
+
+.header-logo-wrapper{
+  margin: 0;
+  /* 
+    ブラウザ側で user agent stylesheet というセレクタに 
+    margin が初期値として設定されていたので上書き 
+  */
+}
+
+.header-logo{
+  height: 50px;
+}
+
 /* hero */
 .hero{
   background-image: url("../images/hero.png");
@@ -116,6 +141,14 @@ img{
 }
 
 @media (max-width: 750px) {
+  .header{
+    height: 60px;
+  }
+
+  .header-logo{
+    height: 30px;
+  }
+
   .hero{
     padding: 40px, 20px;
   }
