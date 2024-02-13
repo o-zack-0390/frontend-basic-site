@@ -409,10 +409,19 @@ img{
   height: 100%;
   background-color: var(--color-accent-yellow);
   z-index: -1;
+  transition: all 0.3s ease;
   /*
     content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
     position: absolute -> 親要素を起点として位置を決定
   */
+}
+
+.courses-card-details-button:hover::before{
+  top: 12px;
+  right: -12px;
+  bottom: -12px;
+  left: 12px;
+  background-color: var(--color-button-hover-red);
 }
 
 .courses-details-button-texts{
