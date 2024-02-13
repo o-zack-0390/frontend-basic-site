@@ -380,13 +380,27 @@ img{
   color: var(--color-accent-red);
 }
 
-.another{
-  position: relative;
-  z-index: 0;
-}
-
 /* courses-details-button */
 .courses-details-button{
+  position: relative;
+  z-index: 0;
+  /*
+    疑似要素がbodyタグの裏側に隠れてしまうバグが発生したので親クラスにz-indexを指定して解決.
+
+    beforeを持つクラス自体に z-index を指定しないことで下記クラスの階層が同じと判断されるようにする.
+    courses-details-button
+    courses-details-button-container
+
+    今回は下記の通りで z-index を指定.
+    courses-details-button                   -> z-index:0
+    courses-details-button-container::before -> z-index:-1
+
+    参考文献
+    https://learning.mihune-web.com/z-index2/
+  */
+}
+
+.courses-details-button-container{
   height: 60px;
   width: 800px;
   color: var(--color-white);
@@ -401,7 +415,11 @@ img{
   gap: 20px;
 }
 
-.courses-details-button::before{
+.courses-details-button-container:hover{
+  background-color: var(--color-button-hover-red);
+}
+
+.courses-details-button-container::before{
   content: "";
   position: absolute;
   top: 4px;
@@ -419,12 +437,12 @@ img{
   */
 }
 
-.courses-card-details-button:hover::before{
+.courses-details-button-container:hover::before{
   top: 12px;
   right: -12px;
   bottom: -12px;
   left: 12px;
-  background-color: var(--color-button-hover-red);
+  background-color: var(--color-course-hover-yellow);
 }
 
 .courses-details-button-texts{
