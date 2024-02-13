@@ -16,3 +16,160 @@
   --color-hero-overlay: rgba(57, 24, 111, 0.4);
   --color-course-overlay: rgba(32, 8, 19, 0.63);
 }
+
+/* global */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: var(--font-family-noto-sans-jp);
+  /* bodyタグは初期値でmarginが設定されているため 0 に上書きしておく */
+}
+
+img{
+  display: block;
+}
+
+/* header */
+.header{
+  height: 80px;
+  width: 100%;
+  background-color: var(--color-background-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /*
+    justify-content: center; -> 子要素をX軸方向に中央揃え
+    align-items: center;     -> 子要素をY軸方向に中央揃え
+    position: fixed;         -> 要素を追従させる. 今回の場合は画面上から0px、画面左から0pxの位置に要素が配置され追従する
+  */
+}
+
+.header-logo-wrapper{
+  margin: 0;
+  /* 
+    ブラウザ側で user agent stylesheet というセレクタに 
+    margin が初期値として設定されているので上書き 
+  */
+}
+
+.header-logo{
+  height: 50px;
+}
+
+/* hero */
+.hero{
+  background-image: url("../images/hero.png");
+  background-size: cover;
+  padding: 94px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 80px;
+  /*
+    padding             -> 要素の「内容と枠の間」の余白を設定
+    justify-content     -> flex-direction と並行する方向のレイアウトを調整
+    flex-end            -> 子要素を右に寄せる
+    align-items: center -> 子要素を中央に配置
+    position: relative  -> その要素のもとのあった場所(static指定時)を起点として位置を決定
+    margin-top: 80px    -> header 要素と重なってしまうので header の高さと同じ 80px を指定
+  */
+}
+
+.hero::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-hero-overlay);
+  /*
+    content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
+    position: absolute -> 親要素を起点として位置を決定
+  */
+}
+
+.hero-container{
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  /*
+    justify-content -> flex-direction と並行する方向のレイアウトを調整
+    flex-end        -> 子要素を右に寄せる
+    z-index         -> 要素を重ねる順番を指定. 値が大きいほど上に重なる
+  */
+}
+
+.hero-texts{
+  color: var(--color-accent-yellow);
+  display: flex;
+  flex-direction: column;
+  gap: 30px
+  /*
+    flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
+    gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
+  */
+}
+
+.hero-main-copy{
+  font-family: var(--font-family-anton);
+  font-size: 64px;
+  line-height: 1;
+  margin: 0; 
+  letter-spacing: 0.05em;
+  color: var(--color-accent-yellow);
+  /*
+    line-height    -> 文字の大きさと上下の余白を合わせた高さ
+    em             -> 文字の高さを基準とした単位。フォントサイズが10pxで1emなら10px、5emなら50px
+    letter-spacing -> 文字の間隔
+    margin         -> 要素の外側を囲う余白
+  */
+}
+
+.hero-main-copy-accent{
+  color: var(--color-accent-red);
+}
+
+.hero-sub-copy{
+  font-family: var(--font-family-noto-sans-jp);
+  font-size: 16px;
+  margin: 0
+}
+
+@media (max-width: 750px) {
+  .header{
+    height: 60px;
+  }
+
+  .header-logo{
+    height: 30px;
+  }
+
+  .hero{
+    margin-top: 60px;
+    padding: 40px, 20px;
+    /*
+      margin-top: 60px    -> header 要素と重なってしまうので header の高さと同じ 60px を指定
+    */
+  }
+
+  .hero-container{
+    justify-content: flex-start;
+  }
+
+  .hero-texts{
+    gap: 10px
+  }
+}
