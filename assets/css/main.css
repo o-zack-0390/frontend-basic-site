@@ -380,6 +380,11 @@ img{
   color: var(--color-accent-red);
 }
 
+.another{
+  position: relative;
+  z-index: 0;
+}
+
 /* courses-details-button */
 .courses-details-button{
   height: 60px;
@@ -394,8 +399,6 @@ img{
   justify-content: center;
   align-items: center;
   gap: 20px;
-  position: relative;
-  z-index: 0;
 }
 
 .courses-details-button::before{
