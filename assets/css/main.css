@@ -245,7 +245,7 @@ img{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   /*
     justify-content     -> flex-direction と並行する方向のレイアウトを調整
     align-items         -> flex-direction と交差する方向のレイアウトを調整
