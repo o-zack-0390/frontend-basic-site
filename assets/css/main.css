@@ -457,7 +457,7 @@ img{
   z-index: 3;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 750px) {
   .header{
     height: 60px;
   }
