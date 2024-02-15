@@ -280,27 +280,22 @@ img{
 }
 
 .courses-container{
+  height: auto;
   width: 100%;
   max-width: 1000px;
+  background-color: pink;
+  padding: 0px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  /*
-    justify-content     -> flex-direction と並行する方向のレイアウトを調整
-    align-items         -> flex-direction と交差する方向のレイアウトを調整
-  */
-}
-
-.courses-title{
-  line-height: 1.5;
-  color: var(--color-white);
-  font-family: var(--font-family-anton);
-  font-size: 32px;
 }
 
 .courses-cards{
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -309,14 +304,38 @@ img{
 }
 
 .courses-card{
-  height: 150px;
-  width: 800px;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 0;
+  /*
+    疑似要素がbodyタグの裏側に隠れてしまうバグが発生したので親クラスにz-indexを指定して解決.
+
+    beforeを持つクラス自体に z-index を指定しないことで下記クラスの階層が同じと判断されるようにする.
+    courses-card
+    courses-card-body
+
+    今回は下記の通りで z-index を指定.
+    courses-card              -> z-index:0
+    courses-card-body::before -> z-index:-1
+
+    参考文献
+    https://learning.mihune-web.com/z-index2/
+  */
+}
+
+.courses-card-body{
+  height: 100%;
+  width: 100%;
+  min-height: 150px;
+  max-width: 800px;
+  background-color: var(--color-accent-yellow);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1;
   /*
     justify-content     -> flex-direction と並行する方向のレイアウトを調整
     align-items         -> flex-direction と交差する方向のレイアウトを調整
@@ -325,28 +344,11 @@ img{
   */
 }
 
-.courses-card::before{
-  background-color: var(--color-accent-red);
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: -4px;
-  bottom: -4px;
-  left: 4px;
-  z-index: 0;
-  transition: all 0.3s ease;
-}
-
-.courses-card:hover::before {
-  top: 12px;
-  right: -12px;
-  bottom: -12px;
-  left: 12px;
-}
-
 .courses-card-image{
   height: 100%;
-  width: 30%;
+  width: 100%;
+  min-height: 150px;
+  max-width: 250px;
   color: var(--color-white);
   background-image: url("../images/live.png");
   background-size: cover;
@@ -361,28 +363,31 @@ img{
   */
 }
 
-.courses-card-image::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-hero-overlay);
-  /*
-    content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
-    position: absolute -> 親要素を起点として位置を決定
-  */
-}
-
 .courses-card-title{
   font-family: var(--font-family-anton);
   font-size: 32px;
+  line-height: 150px;
   letter-spacing: 0.05em;
   z-index: 3;
 }
 
-.courses-card-body{
+.courses-card-body::before{
+  background-color: var(--color-accent-red);
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  bottom: -4px;
+  left: 4px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.courses-card-body::before:hover{
+  background-color: var(--color-button-hover-red);
+}
+
+.courses-card-content{
   height: 100%;
   width: 70%;
   background-color: var(--color-accent-yellow);
@@ -399,7 +404,7 @@ img{
   */
 }
 
-.courses-card-body:hover{
+.courses-card-content:hover{
   background-color: var(--color-course-hover-yellow);
 }
 
@@ -528,4 +533,25 @@ img{
   .hero-texts{
     gap: 10px
   }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.image {
+  content: "";
+  max-width: 100%;
+  height: auto;
+  background-image: url("../images/live.png");
+  background-size: cover;
 }
