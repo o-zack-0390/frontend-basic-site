@@ -167,6 +167,7 @@ img{
 .about-container{
   width: 100%;
   max-width: 1000px;
+  min-width: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,7 +203,8 @@ img{
 }
 
 .about-content{
-  height: 170px;
+  height: auto;
+  max-width: 80%;
   display: flex;
   flex-direction: row;
   gap: 10px
@@ -213,15 +215,54 @@ img{
 }
 
 .about-texts{
-  width: 460px;
+  height: auto;
+  width: 100%;
+  max-width: 460px;
   font-size: 16px;
   color: var(--color-white);
+  /*
+    height: auto -> 画面幅に応じてテキスト文をY軸方向に寄せる
+  */
 }
 
 .about-image{
-  width: 320px;
+  min-width: 320px;
+  min-height: 180px;
+  max-width: 320px;
+  max-height: 180px;
   background-image: url("../images/live.png");
   background-size: cover;
+  /*
+    最小サイズと最大サイズを同じにすることで、レイアウトが変わっても常に同じサイズで表示
+  */
+}
+
+@media (max-width: 750px) {
+  .about{
+    padding: 40px 20px;
+  }
+
+  .about-title{
+    line-height: 1.5;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .about-content{
+    height: 170px;
+    width: 350px;
+  }
+
+  .about-texts{
+    height: 170px;
+    width: 350px;
+    font-size: 16px;
+    color: var(--color-white);
+  }
+  
+  .about-image{
+    display: none;
+  }
 }
 
 /* courses */
@@ -486,9 +527,5 @@ img{
 
   .hero-texts{
     gap: 10px
-  }
-
-  .about{
-    padding: 40px 20px;
   }
 }
