@@ -281,7 +281,7 @@ img{
 
 .courses-container{
   width: auto;
-  max-width: 800px;
+  max-width: 880px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -316,12 +316,20 @@ img{
   min-height: 150px;
   text-decoration: none;
   box-shadow: 4px 4px 0 var(--color-accent-red);
+  position: relative;
   transition-duration: 0.3s;
   /*
     カードのスタイル。
     子要素の画像とテキスト文が横並びになる
 
     box-shadow: 4px 4px 0 -> 要素の右側と下側に4pxの影を描画. 影のぼかし度は 0 に指定.
+  */
+}
+
+.courses-card:hover{
+  box-shadow: 12px 12px 1px var(--color-accent-red);
+  /*
+    ボバーしたら box-shadow の値を 4px -> 12px に変更.
   */
 }
 
@@ -375,14 +383,18 @@ img{
   */
 }
 
-.courses-content{
+.courses-card-content{
   background: var(--color-accent-yellow);
   padding: 20px;
   display: flex;
   flex-direction: column;
   font-size: 16px;
-  gap: 0px;
+  gap: 10px;
   transition-duration: 0.3s;
+}
+
+.courses-card-content:hover{
+  background-color: var(--color-course-hover-yellow);
 }
 
 .courses-card-text{
@@ -391,73 +403,30 @@ img{
 
 /* courses-details-button */
 .courses-details-button{
-  display: block;
-  text-decoration: none;
-  position: relative;
-  z-index: 0;
-  /*
-    疑似要素がbodyタグの裏側に隠れてしまうバグが発生したので親クラスにz-indexを指定して解決.
-
-    beforeを持つクラス自体に z-index を指定しないことで下記クラスの階層が同じと判断されるようにする.
-    courses-details-button
-    courses-details-button-container
-
-    今回は下記の通りで z-index を指定.
-    courses-details-button                   -> z-index:0
-    courses-details-button-container::before -> z-index:-1
-
-    参考文献
-    https://learning.mihune-web.com/z-index2/
-  */
-}
-
-.courses-details-button-container{
+  background: var(--color-accent-red);
   height: 60px;
-  width: 800px;
-  color: var(--color-white);
-  font-family: var(--font-family-anton);
-  font-size: 20px;
-  background-color: var(--color-accent-red);
-  padding: 10px 40px;
+  padding: 0 40px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--color-accent-yellow);
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-
-.courses-details-button-container:hover{
-  background-color: var(--color-button-hover-red);
-}
-
-.courses-details-button-container::before{
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: -4px;
-  bottom: -4px;
-  left: 4px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent-yellow);
-  z-index: -1;
-  transition: all 0.3s ease;
+  align-self: stretch;
+  gap: 10px;
+  transition: 0.3s;
   /*
-    content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
-    position: absolute -> 親要素を起点として位置を決定
+    align-self: stretch -> 親要素の横幅に合わせてflexアイテムを伸縮
   */
 }
 
-.courses-details-button-container:hover::before{
-  top: 12px;
-  right: -12px;
-  bottom: -12px;
-  left: 12px;
-  background-color: var(--color-course-hover-yellow);
+.courses-details-button:hover{
+  background: var(--color-button-hover-red);
+  box-shadow: 12px 12px 0 var(--color-course-hover-yellow);
 }
 
-.courses-details-button-texts{
-  z-index: 2;
+.courses-details-button-text{
+  font-size: 20px;
+  color: var(--color-white);
 }
 
 .courses-details-button-image{
@@ -465,7 +434,6 @@ img{
   background-size: cover;
   height: 20px;
   width: 27px;
-  z-index: 3;
 }
 
 @media (max-width: 750px) {
