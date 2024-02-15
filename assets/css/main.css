@@ -79,7 +79,7 @@ img{
 .hero{
   background-image: url("../images/hero.png");
   background-size: cover;
-  padding: 94px 40px;
+  padding: 96px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +126,7 @@ img{
   color: var(--color-accent-yellow);
   display: flex;
   flex-direction: column;
-  gap: 30px
+  gap: 20px
   /*
     flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
     gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
