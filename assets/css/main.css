@@ -65,6 +65,16 @@ img{
   height: 50px;
 }
 
+@media (max-width: 750px){
+  .header{
+    height: 60px;
+  }
+
+  .header-logo{
+    height: 30px;
+  }
+}
+
 /* hero */
 .hero{
   background-image: url("../images/hero.png");
@@ -146,6 +156,24 @@ img{
   font-family: var(--font-family-noto-sans-jp);
   font-size: 16px;
   margin: 0
+}
+
+@media (max-width: 750px){
+  .hero{
+    margin-top: 60px;
+    padding: 40px 20px;
+    /*
+      margin-top: 60px    -> header 要素と重なってしまうので header の高さと同じ 60px を指定
+    */
+  }
+
+  .hero-container{
+    justify-content: flex-start;
+  }
+
+  .hero-texts{
+    gap: 10px
+  }
 }
 
 /* about */
@@ -434,30 +462,4 @@ img{
   background-size: cover;
   height: 20px;
   width: 27px;
-}
-
-@media (max-width: 750px) {
-  .header{
-    height: 60px;
-  }
-
-  .header-logo{
-    height: 30px;
-  }
-
-  .hero{
-    margin-top: 60px;
-    padding: 40px 20px;
-    /*
-      margin-top: 60px    -> header 要素と重なってしまうので header の高さと同じ 60px を指定
-    */
-  }
-
-  .hero-container{
-    justify-content: flex-start;
-  }
-
-  .hero-texts{
-    gap: 10px
-  }
 }
