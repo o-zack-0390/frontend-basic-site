@@ -377,24 +377,8 @@ img{
 
       flex-shrink: 要素が親要素内でどれだけ縮むかを指定. ここでは0なので、この要素は縮まない
 
-      flex-basis: 要素の初期のサイズを指定. ここではautoが指定されており、要素は自身の内容や幅に基づいてサイズが自動的に設定される.
+      flex-basis: 要素の初期のサイズを指定. ここではautoが指定されており、内容や幅に基づいてサイズが自動的に設定される.
   */
-}
-
-.courses-card-details{
-  color: var(--color-accent-red);
-  align-self: flex-end;
-  /*
-    align-self -> Flexアイテムに対して垂直方向の配置を指定.
-  */
-}
-
-.courses-card-image-title{
-  font-family: var(--font-family-anton);
-  font-size: 32px;
-  letter-spacing: 0.05em;
-  color: var(--color-white);
-  position: relative;
 }
 
 .courses-card-image::before{
@@ -408,6 +392,26 @@ img{
   /*
     content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
     position: absolute -> 親要素を起点として位置を決定
+  */
+}
+
+.courses-card-details{
+  color: var(--color-accent-red);
+  align-self: flex-end;
+  /*
+    align-self -> Flexアイテムに対して垂直方向の配置を指定. flex-endにすると右寄せで配置
+  */
+}
+
+.courses-card-image-title{
+  font-family: var(--font-family-anton);
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  position: relative;
+  /*
+    position: relative を設定することで Frontman が一番上に表示された.
+    理由は不明
   */
 }
 
