@@ -126,7 +126,7 @@ img{
   color: var(--color-accent-yellow);
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 30px;
   /*
     flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
     gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
@@ -172,7 +172,7 @@ img{
   }
 
   .hero-texts{
-    gap: 10px
+    gap: 20px;
   }
 }
 
