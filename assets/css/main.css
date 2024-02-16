@@ -194,12 +194,11 @@ img{
 
 .about-container{
   width: 100%;
-  max-width: 1000px;
-  min-width: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px 40px;
   gap: 40px;
   /*
     justify-content     -> flex-direction と並行する方向のレイアウトを調整
@@ -231,8 +230,6 @@ img{
 }
 
 .about-content{
-  height: auto;
-  max-width: 80%;
   display: flex;
   flex-direction: row;
   gap: 10px
@@ -274,18 +271,6 @@ img{
     line-height: 1.5;
     font-size: 24px;
     letter-spacing: 0.02em;
-  }
-
-  .about-content{
-    height: 170px;
-    width: 350px;
-  }
-
-  .about-texts{
-    height: 170px;
-    width: 350px;
-    font-size: 16px;
-    color: var(--color-white);
   }
   
   .about-image{
