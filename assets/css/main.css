@@ -433,7 +433,6 @@ img{
   color: var(--color-black);
 }
 
-/* courses-details-button */
 .courses-details-button{
   background: var(--color-accent-red);
   height: 60px;
@@ -466,4 +465,34 @@ img{
   background-size: cover;
   height: 20px;
   width: 27px;
+}
+
+@media (max-width: 750px){
+  .courses{
+    background-color: var(--color-background-navy);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*
+      padding         -> 要素の「内容と枠の間」の余白を設定
+      justify-content -> flex-direction と並行する方向のレイアウトを調整
+      align-items     -> flex-direction と交差する方向のレイアウトを調整
+    */
+  }
+  
+  .courses-container{
+    width: 100%;
+    max-width: 710px;
+    padding: 0px 0px;
+    gap: 40px;
+    /*
+      padding: 0px 40px -> 画面幅を縮小し続けても常に左右40pxの余白が生まれる
+      gap: 40px         -> 子要素間の間隔を指定
+    */
+  }
+
+  .courses-card{
+    flex-direction: column;
+  }
 }
