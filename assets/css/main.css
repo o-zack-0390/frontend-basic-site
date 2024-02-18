@@ -533,3 +533,80 @@ img{
     font-size: 14px;
   }
 }
+
+/* sigh up */
+.sighup{
+  padding: 80px 0px;
+  background-color: var(--color-accent-yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
+    justify-content: center -> 子要素のコンテナをX軸方向に中央寄せにする
+    align-items: center     -> 子要素のコンテナをY軸方向に中央寄せにする
+  */
+}
+
+.sighup-container{
+  width: 100%;
+  max-width: 880px;
+  padding: 0px 40px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sighup-title{
+  font-size: 32px;
+  font-family: var(--font-family-anton);
+  letter-spacing: 0.02em;
+}
+
+.sighup-text{
+  width: 100%;
+}
+
+.sighup-forms{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sighup-form{
+  width: 100%;
+  display: flex;
+}
+
+.sighup-form-label{
+  font-size: 20px;
+  flex: 0 0 250px;
+  /*
+    flex: 0 0 250px -> 拡大や縮小はせず、初期の width を 250px に設定 
+  */
+}
+
+.sighup-form-input{
+  height: 40px;
+  font-size: 16px;
+  background-color: var(--color-form-background-yellow);
+  border: 1px solid var(--color-form-border-red);
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1;
+  /*
+    flex: 1 -> 下記3つをまとめて定義
+
+      flex-grow   -> 余白があるときに、他の子要素と1:nの比率で余白を配分して拡大
+      flex-shrink -> サイズが親要素を超えた場合、他の子要素と1:nの比率で収縮する割合を配分して縮小
+      flex-basis  -> widthの初期値を 0px に設定
+  */
+}
+
+.sighup-form-submit{
+  height: 60px;
+}
