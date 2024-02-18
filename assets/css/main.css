@@ -232,7 +232,7 @@ img{
 .about-content{
   display: flex;
   flex-direction: row;
-  gap: 10px
+  gap: 20px
   /*
     flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
     gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
@@ -245,7 +245,7 @@ img{
   max-width: 460px;
   font-size: 16px;
   color: var(--color-white);
-  margin: 16px;
+  margin: auto;
   /*
     height: auto -> 画面幅に応じてテキスト文をY軸方向に寄せる
   */
