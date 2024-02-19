@@ -536,4 +536,9 @@ img{
   .courses-details-button-text{
     font-size: 14px;
   }
+
+  .courses-details-button-image{
+    height: 30px;
+    width: 30px;
+  }
 }
