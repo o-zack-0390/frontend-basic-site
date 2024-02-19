@@ -65,11 +65,21 @@ img{
   height: 50px;
 }
 
+@media (max-width: 750px){
+  .header{
+    height: 60px;
+  }
+
+  .header-logo{
+    height: 30px;
+  }
+}
+
 /* hero */
 .hero{
   background-image: url("../images/hero.png");
   background-size: cover;
-  padding: 94px 40px;
+  padding: 96px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +126,7 @@ img{
   color: var(--color-accent-yellow);
   display: flex;
   flex-direction: column;
-  gap: 30px
+  gap: 30px;
   /*
     flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
     gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
@@ -148,6 +158,24 @@ img{
   margin: 0
 }
 
+@media (max-width: 750px){
+  .hero{
+    margin-top: 60px;
+    padding: 40px 20px;
+    /*
+      margin-top: 60px    -> header 要素と重なってしまうので header の高さと同じ 60px を指定
+    */
+  }
+
+  .hero-container{
+    justify-content: flex-start;
+  }
+
+  .hero-texts{
+    gap: 20px;
+  }
+}
+
 /* about */
 .about{
   background-color: var(--color-background-black);
@@ -166,12 +194,11 @@ img{
 
 .about-container{
   width: 100%;
-  max-width: 1000px;
-  min-width: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px 40px;
   gap: 40px;
   /*
     justify-content     -> flex-direction と並行する方向のレイアウトを調整
@@ -203,11 +230,9 @@ img{
 }
 
 .about-content{
-  height: auto;
-  max-width: 80%;
   display: flex;
   flex-direction: row;
-  gap: 10px
+  gap: 20px
   /*
     flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
     gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
@@ -220,6 +245,7 @@ img{
   max-width: 460px;
   font-size: 16px;
   color: var(--color-white);
+  margin: auto;
   /*
     height: auto -> 画面幅に応じてテキスト文をY軸方向に寄せる
   */
@@ -242,22 +268,19 @@ img{
     padding: 40px 20px;
   }
 
+  .about-container{
+    padding: 0px 0px;
+  }
+
   .about-title{
     line-height: 1.5;
     font-size: 24px;
     letter-spacing: 0.02em;
   }
 
-  .about-content{
-    height: 170px;
-    width: 350px;
-  }
-
   .about-texts{
-    height: 170px;
-    width: 350px;
-    font-size: 16px;
-    color: var(--color-white);
+    max-width: 100%;
+    margin: 16px 0px;
   }
   
   .about-image{
@@ -273,91 +296,89 @@ img{
   justify-content: center;
   align-items: center;
   /*
-    padding             -> 要素の「内容と枠の間」の余白を設定
-    justify-content     -> flex-direction と並行する方向のレイアウトを調整
-    align-items         -> flex-direction と交差する方向のレイアウトを調整
+    padding         -> 要素の「内容と枠の間」の余白を設定
+    justify-content -> flex-direction と並行する方向のレイアウトを調整
+    align-items     -> flex-direction と交差する方向のレイアウトを調整
   */
 }
 
 .courses-container{
-  width: 100%;
-  max-width: 1000px;
+  width: auto;
+  max-width: 880px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  padding: 0px 40px;
+  gap: 40px;
   /*
-    justify-content     -> flex-direction と並行する方向のレイアウトを調整
-    align-items         -> flex-direction と交差する方向のレイアウトを調整
+    padding: 0px 40px -> 画面幅を縮小し続けても常に左右40pxの余白が生まれる
+    gap: 40px         -> 子要素間の間隔を指定
   */
 }
 
 .courses-title{
-  line-height: 1.5;
   color: var(--color-white);
+  line-height: 1.5;
   font-family: var(--font-family-anton);
   font-size: 32px;
+  letter-spacing: 0.02em;
+  /*
+    line-height    -> 文字の大きさと上下の余白を合わせた高さ. font-size × 数値 で高さが決まる.
+    letter-spacing -> 文字の高さを基準とした単位. フォントサイズが10pxで1emなら10px、5emなら50px
+    letter-spacing -> 文字の間隔
+    margin         -> 要素の外側を囲う余白
+  */
 }
 
 .courses-cards{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px
-}
-
-.courses-card{
-  height: 150px;
-  width: 800px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+  gap: 20px;
   /*
-    justify-content     -> flex-direction と並行する方向のレイアウトを調整
-    align-items         -> flex-direction と交差する方向のレイアウトを調整
-    position: relative  -> 子要素が位置を参照するため指定
-    z-index:            -> courses-card::before, courses-card, courses-card-body, courses-card-title の順番で表示
+    子要素に4枚のカードが縦に並ぶので、flex-direction に column を設定
   */
 }
 
-.courses-card::before{
-  background-color: var(--color-accent-red);
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: -4px;
-  bottom: -4px;
-  left: 4px;
-  z-index: 0;
-  transition: all 0.3s ease;
+.courses-card{
+  display: flex;
+  min-height: 150px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--color-accent-red);
+  position: relative;
+  transition-duration: 0.3s;
+  /*
+    カードのスタイル。
+    子要素の画像とテキスト文が横並びになる
+
+    box-shadow: 4px 4px 0 -> 要素の右側と下側に4pxの影を描画. 影のぼかし度は 0 に指定.
+  */
 }
 
-.courses-card:hover::before {
-  top: 12px;
-  right: -12px;
-  bottom: -12px;
-  left: 12px;
+.courses-card:hover{
+  box-shadow: 12px 12px 1px var(--color-accent-red);
+  /*
+    ボバーしたら box-shadow の値を 4px -> 12px に変更.
+  */
 }
 
 .courses-card-image{
-  height: 100%;
-  width: 30%;
-  color: var(--color-white);
-  background-image: url("../images/live.png");
-  background-size: cover;
+  width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
+  background: url("../images/live.png");
+  background-size: cover;
   position: relative;
   /*
-    justify-content     -> flex-direction と並行する方向のレイアウトを調整
-    align-items         -> flex-direction と交差する方向のレイアウトを調整
-    position: relative -> 子要素が位置を参照するため指定
+    flex: 0 0 auto -> 下記3つの機能で構成されている
+     
+      flex-grow: 要素が親要素内でどれだけ伸びるかを指定. ここでは0なので、この要素は伸びない
+
+      flex-shrink: 要素が親要素内でどれだけ縮むかを指定. ここでは0なので、この要素は縮まない
+
+      flex-basis: 要素の初期のサイズを指定. ここではautoが指定されており、内容や幅に基づいてサイズが自動的に設定される.
   */
 }
 
@@ -368,164 +389,156 @@ img{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--color-hero-overlay);
+  background-color: var(--color-course-overlay);
   /*
     content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
     position: absolute -> 親要素を起点として位置を決定
   */
 }
 
-.courses-card-title{
-  font-family: var(--font-family-anton);
-  font-size: 32px;
-  letter-spacing: 0.05em;
-  z-index: 3;
-}
-
-.courses-card-body{
-  height: 100%;
-  width: 70%;
-  background-color: var(--color-accent-yellow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  gap: 10px;
-  z-index: 2;
+.courses-card-details{
+  color: var(--color-accent-red);
+  align-self: flex-end;
   /*
-    flex-direction -> 子要素を「 縦並び(column) or 横並び(row) 」にする
-    gap            -> 子要素同士の間隔。第一引数が行、第二引数が列 (https://ics.media/entry/210628/)
+    align-self -> Flexアイテムに対して垂直方向の配置を指定. flex-endにすると右寄せで配置
   */
 }
 
-.courses-card-body:hover{
+.courses-card-image-title{
+  font-family: var(--font-family-anton);
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  margin: 32px 0px;
+  position: relative;
+  /*
+    position: relative を設定することで Frontman が一番上に表示された.
+    理由は不明
+  */
+}
+
+.courses-card-content{
+  background: var(--color-accent-yellow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  transition-duration: 0.3s;
+}
+
+.courses-card-content:hover{
   background-color: var(--color-course-hover-yellow);
 }
 
 .courses-card-text{
   color: var(--color-black);
-}
-
-.courses-card-details{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.courses-card-details-link{
-  line-height: 22px;
-  width: 20%;
-  color: var(--color-accent-red);
-  text-decoration: none;
+  flex: 1;
   /*
-    text-decoration: none -> <a></a>タグの下線を非表示にする
+    flex: 1 -> これの設定に含まれている flex-grow が無いとflexコンテナ(親要素)の下に余白が生じる.
   */
 }
 
-/* courses-details-button */
 .courses-details-button{
-  display: block;
-  text-decoration: none;
-  position: relative;
-  z-index: 0;
-  /*
-    疑似要素がbodyタグの裏側に隠れてしまうバグが発生したので親クラスにz-indexを指定して解決.
-
-    beforeを持つクラス自体に z-index を指定しないことで下記クラスの階層が同じと判断されるようにする.
-    courses-details-button
-    courses-details-button-container
-
-    今回は下記の通りで z-index を指定.
-    courses-details-button                   -> z-index:0
-    courses-details-button-container::before -> z-index:-1
-
-    参考文献
-    https://learning.mihune-web.com/z-index2/
-  */
-}
-
-.courses-details-button-container{
+  background: var(--color-accent-red);
   height: 60px;
-  width: 800px;
-  color: var(--color-white);
-  font-family: var(--font-family-anton);
-  font-size: 20px;
-  background-color: var(--color-accent-red);
-  padding: 10px 40px;
+  padding: 0 40px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--color-accent-yellow);
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-
-.courses-details-button-container:hover{
-  background-color: var(--color-button-hover-red);
-}
-
-.courses-details-button-container::before{
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: -4px;
-  bottom: -4px;
-  left: 4px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent-yellow);
-  z-index: -1;
-  transition: all 0.3s ease;
+  align-self: stretch;
+  gap: 10px;
+  transition: 0.3s;
   /*
-    content            -> これが無いと background-color が適用されない. ""の中に文章を記載できる
-    position: absolute -> 親要素を起点として位置を決定
+    align-self: stretch -> 親要素の横幅に合わせてflexアイテムを伸縮
   */
 }
 
-.courses-details-button-container:hover::before{
-  top: 12px;
-  right: -12px;
-  bottom: -12px;
-  left: 12px;
-  background-color: var(--color-course-hover-yellow);
+.courses-details-button:hover{
+  background: var(--color-button-hover-red);
+  box-shadow: 12px 12px 0 var(--color-course-hover-yellow);
 }
 
-.courses-details-button-texts{
-  z-index: 2;
+.courses-details-button-text{
+  font-size: 20px;
+  color: var(--color-white);
+  text-align: center;
+  flex-grow: 1;
+  /*
+    flex-grow: 1 -> 余白がある場合 flex-grow の値に応じて伸長
+  */
 }
 
 .courses-details-button-image{
   background-image: url("../images/arrow-right.svg");
   background-size: cover;
-  height: 20px;
-  width: 27px;
-  z-index: 3;
+  height: 40px;
+  width: 40px;
 }
 
-@media (max-width: 750px) {
-  .header{
-    height: 60px;
-  }
-
-  .header-logo{
-    height: 30px;
-  }
-
-  .hero{
-    margin-top: 60px;
+@media (max-width: 750px){
+  .courses{
+    background-color: var(--color-background-navy);
     padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /*
-      margin-top: 60px    -> header 要素と重なってしまうので header の高さと同じ 60px を指定
+      padding         -> 要素の「内容と枠の間」の余白を設定
+      justify-content -> flex-direction と並行する方向のレイアウトを調整
+      align-items     -> flex-direction と交差する方向のレイアウトを調整
+    */
+  }
+  
+  .courses-container{
+    width: 100%;
+    max-width: 710px;
+    padding: 0px 0px;
+    gap: 40px;
+    /*
+      padding: 0px 40px -> 画面幅を縮小し続けても常に左右40pxの余白が生まれる
+      gap: 40px         -> 子要素間の間隔を指定
     */
   }
 
-  .hero-container{
-    justify-content: flex-start;
+  .courses-title{
+    font-size: 24px;
   }
 
-  .hero-texts{
-    gap: 10px
+  .courses-card{
+    flex-direction: column;
+  }
+
+  .courses-card-image{
+    height: 200px;
+    width: 100%;
+  }
+
+  .courses-card-image-title{
+    font-size: 24px;
+    margin: 24px 0px;
+  }
+
+  .courses-card-text{
+    font-size: 12px;
+  }
+
+  .courses-card-details{
+    font-size: 12px;
+  }
+
+  .courses-details-button{
+    height: 40px;
+    padding: 0px 20px;
+  }
+
+  .courses-details-button-text{
+    font-size: 14px;
+  }
+
+  .courses-details-button-image{
+    height: 30px;
+    width: 30px;
   }
 }
