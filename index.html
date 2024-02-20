@@ -146,19 +146,24 @@
           </div>
           <div class="sighup-form">
             <label for="email" class="sighup-form-label">メールアドレス</label>
-            <input id="email" type="text" name="example" placeholder="grand.players@example.com" class="sighup-form-input">
+            <input id="email" type="email" name="example" placeholder="grand.players@example.com" class="sighup-form-input">
           </div>
           <div class="sighup-form">
             <label for="history" class="sighup-form-label">ギター歴(年)</label>
-            <input id="history" type="text" name="example" placeholder="3" class="sighup-form-input">
+            <input id="history" type="number" name="example" placeholder="3" class="sighup-form-input">
           </div>
           <div class="sighup-form">
             <label for="enthusiasm" class="sighup-form-label">意気込みをどうぞ!</label>
-            <input id="enthusiasm" type="text" name="example" placeholder="イカすギターソロをかましてモテた～い！" class="sighup-form-input">
+            <textarea id="enthusiasm" type="text" name="example" placeholder="イカすギターソロをかましてモテた～い！" rows=8 class="sighup-form-input"></textarea>
           </div>
-          <input type="sighup-form-submit">
+          <button type="submit" class="sighup-form-submit">
+            <div class="sighup-form-submit-text">送信する</div>
+            <div class="sighup-form-submit-image"></div>
+          </button>
         </form>
-        <div>要素</div>
       </div>
+    </section>
+    <section class="footer">
+      <p class="footer-text">© 2023 GrandPlayers</p>
     </section>
   </body>
