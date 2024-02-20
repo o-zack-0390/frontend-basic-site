@@ -543,8 +543,8 @@ img{
   }
 }
 
-/* sigh up */
-.sighup{
+/* sign up */
+.signup{
   padding: 80px 0px;
   background-color: var(--color-accent-yellow);
   display: flex;
@@ -556,7 +556,7 @@ img{
   */
 }
 
-.sighup-container{
+.signup-container{
   width: 100%;
   max-width: 880px;
   padding: 0px 40px;
@@ -568,17 +568,17 @@ img{
   gap: 40px;
 }
 
-.sighup-title{
+.signup-title{
   font-size: 32px;
   font-family: var(--font-family-anton);
   letter-spacing: 0.02em;
 }
 
-.sighup-text{
+.signup-text{
   width: 100%;
 }
 
-.sighup-forms{
+.signup-forms{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -586,12 +586,12 @@ img{
   gap: 20px;
 }
 
-.sighup-form{
+.signup-form{
   width: 100%;
   display: flex;
 }
 
-.sighup-form-label{
+.signup-form-label{
   font-size: 20px;
   flex: 0 0 250px;
   /*
@@ -599,7 +599,7 @@ img{
   */
 }
 
-.sighup-form-input{
+.signup-form-input{
   font-size: 16px;
   background-color: var(--color-form-background-yellow);
   border: 1px solid var(--color-form-border-red);
@@ -615,7 +615,7 @@ img{
   */
 }
 
-.sighup-form-submit{
+.signup-form-submit{
   background: var(--color-accent-red);
   height: 60px;
   padding: 0 40px;
@@ -633,12 +633,12 @@ img{
   */
 }
 
-.sighup-form-submit:hover{
+.signup-form-submit:hover{
   background: var(--color-button-hover-red);
   box-shadow: 12px 12px 0 var(--color-black);
 }
 
-.sighup-form-submit-text{
+.signup-form-submit-text{
   font-size: 20px;
   color: var(--color-white);
   text-align: center;
@@ -648,7 +648,7 @@ img{
   */
 }
 
-.sighup-form-submit-image{
+.signup-form-submit-image{
   background-image: url("../images/arrow-right.svg");
   background-size: cover;
   height: 40px;
@@ -656,28 +656,28 @@ img{
 }
 
 @media (max-width: 750px){
-  .sighup{
+  .signup{
     padding: 40px 0px;
   }
 
-  .sighup-container{
+  .signup-container{
     padding: 0px 20px;
   }
 
-  .sighup-title{
+  .signup-title{
     font-size: 24px;
   }
 
-  .sighup-forms{
+  .signup-forms{
     gap: 10px;
   }
 
-  .sighup-form{
+  .signup-form{
     flex-direction: column;
     gap: 10px;
   }
 
-  .sighup-form-label{
+  .signup-form-label{
     font-size: 16px;
     flex: 1;
     /*
@@ -685,21 +685,21 @@ img{
     */
   }
 
-  .sighup-form-input{
+  .signup-form-input{
     font-size: 12px;
     padding: 8px;
   }
 
-  .sighup-form-submit{
+  .signup-form-submit{
     height: 40px;
     padding: 0 20px;
   }
 
-  .sighup-form-submit-text{
+  .signup-form-submit-text{
     font-size: 14px;
   }
 
-  .sighup-form-submit-image{
+  .signup-form-submit-image{
     height: 30px;
     width: 30px;
   }
