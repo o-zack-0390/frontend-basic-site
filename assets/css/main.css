@@ -674,7 +674,7 @@ img{
 
   .signup-form{
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
 
   .signup-form-label{
