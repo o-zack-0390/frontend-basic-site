@@ -619,7 +619,7 @@ img{
   background: var(--color-accent-red);
   height: 60px;
   padding: 0 40px;
-  margin: 20px 0px 0px 0px;
+  margin: 30px 0px 0px 0px;
   text-decoration: none;
   box-shadow: 4px 4px 0 var(--color-black);
   display: flex;
