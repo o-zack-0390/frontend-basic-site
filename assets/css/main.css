@@ -628,6 +628,7 @@ img{
   align-self: stretch;
   gap: 10px;
   transition: 0.3s;
+  cursor: pointer;
   /*
     align-self: stretch -> 親要素の横幅に合わせてflexアイテムを伸縮
   */
