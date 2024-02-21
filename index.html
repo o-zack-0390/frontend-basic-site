@@ -22,7 +22,7 @@
           <p class="hero-main-copy">
             BE<br />
             A<br />
-            <span class="hero-main-copy-accent">"GRAND"</span>
+            <span class="hero-main-copy-accent">“GRAND”</span>
             <br />
             PLAYER!!
           </p>
@@ -53,82 +53,117 @@
     <section class="courses">
       <div class="courses-container">
         <div class="courses-title">
-          courses
+          Courses
         </div>
         <div class="courses-cards">
-          <div class="courses-card">
+          <a class="courses-card" href="#">
             <div class="courses-card-image">
-              <div class="courses-card-title">
+              <div class="courses-card-image-title">
                 Frontman
               </div>
             </div>
-            <div class="courses-card-body">
+            <div class="courses-card-content">
               <div class="courses-card-text">
                 フロントマンコースではコードワーク、ストロークを中心とした基礎をはじめ、
                 魅せる動きのコツなども伝授します。
                 講師の実際のライブ映像を本人が解説するレッスンもご用意しております。
               </div>
               <div class="courses-card-details">
-                <a class="courses-card-details-link">もっと見る</a>
+                もっと見る
               </div>
             </div>
-          </div>
-          <div class="courses-card">
+          </a>
+          <a class="courses-card" href="#">
             <div class="courses-card-image">
-              <div class="courses-card-title">
+              <div class="courses-card-image-title">
                 Backing
               </div>
             </div>
-            <div class="courses-card-body">
+            <div class="courses-card-content">
               <div class="courses-card-text">
                 バッキングコースではコードワーク、ストロークを中心とした基礎をはじめ、
                 バンド全体のバランスを俯瞰した音作りの手法などを伝授します。
                 アンプの機種に応じた調整のコツから、EQを用いた本格的な調整まで取り扱っております。
               </div>
               <div class="courses-card-details">
-                <a class="courses-card-details-link">もっと見る</a>
+                もっと見る
               </div>
             </div>
-          </div>
-          <div class="courses-card">
+          </a>
+          <a class="courses-card" href="#">
             <div class="courses-card-image">
-              <div class="courses-card-title">
+              <div class="courses-card-image-title">
                 Lead
               </div>
             </div>
-            <div class="courses-card-body">
+            <div class="courses-card-content">
               <div class="courses-card-text">
                 リードギターコースでは、ピッキングやポジショニングといった観点で、
                 課題となるリフを詳細に解説するレッスンを通じて、
                 リードギターに必要な技術の習得を目指します。
               </div>
               <div class="courses-card-details">
-                <a class="courses-card-details-link">もっと見る</a>
+                もっと見る
               </div>
             </div>
-          </div>
-          <div class="courses-card">
+          </a>
+          <a class="courses-card" href="#">
             <div class="courses-card-image">
-              <div class="courses-card-title">
+              <div class="courses-card-image-title">
                 Solo
               </div>
             </div>
-            <div class="courses-card-body">
+            <div class="courses-card-content">
               <div class="courses-card-text">
                 ギターソロコースでは、アドリブの方法論や特殊奏法のレッスンを通して、
                 とにかくカッコいいソロを弾くための技術を伝授します。
                 上級者向けのコースとなります。
               </div>
               <div class="courses-card-details">
-                <a class="courses-card-details-link">もっと見る</a>
+                もっと見る
               </div>
             </div>
-          </div>
+          </a>
         </div>
-        <div class="courses-details-button">
-          <p class="courses-details-button-texts">すべてのコースを見る</p>
-          <div class="courses-details-button-image"></div>
-        </div>
+        <a class="courses-details-button" href="#">
+         <div class="courses-details-button-text">すべてのコースを見る</div>
+         <div class="courses-details-button-image"></div>
+        </a>
       </div>
+    </section>
+    <section class="signup">
+      <div class="signup-container">
+        <div class="signup-title">Let’s Try!</div>
+        <div class="signup-text">
+          Grand Playersでは、ご利用登録いただけた方に対し、３レッスン分の無料枠をプレゼントいたします！<br />
+          今すぐレッスンを始めて、”Grand”なプレイヤーを目指しましょう！<br />
+          お申し込みは下記フォームからどうぞ！<br />
+        </div>
+        <form id="form" method="post" class="signup-forms">
+          <div class="signup-form">
+            <label for="name" class="signup-form-label">お名前</label>
+            <input id="name" type="text" name="name" placeholder="エドワード ヴァン 太郎" class="signup-form-input">
+          </div>
+          <div class="signup-form">
+            <label for="email" class="signup-form-label">メールアドレス</label>
+            <input id="email" type="email" name="email" placeholder="grand.players@example.com" class="signup-form-input">
+          </div>
+          <div class="signup-form">
+            <label for="history" class="signup-form-label">ギター歴(年)</label>
+            <input id="history" name="history" type="number" min="0" placeholder="3" class="signup-form-input">
+          </div>
+          <div class="signup-form">
+            <label for="enthusiasm" class="signup-form-label">意気込みをどうぞ!</label>
+            <textarea id="enthusiasm" type="text" name="motivation" placeholder="イカすギターソロをかましてモテた～い！" rows=8 class="signup-form-input"></textarea>
+          </div>
+          <button type="submit" class="signup-form-submit">
+            <div class="signup-form-submit-text">送信する</div>
+            <div class="signup-form-submit-image"></div>
+          </button>
+        </form>
+      </div>
+    </section>
+    <section class="footer">
+      <p class="footer-text">© 2023 GrandPlayers</p>
     </section>
   </body>
